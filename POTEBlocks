@@ -1,0 +1,160 @@
+package power_of_the_elements.blocks;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import power_of_the_elements.client.tileentities.TileEntityAccelerator;
+import power_of_the_elements.client.tileentities.TileEntityTombstone;
+import power_of_the_elements.common.POTEConfig;
+import power_of_the_elements.common.mod_POTE;
+import power_of_the_elements.items.ItemFlag;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+
+public class POTEBlocks 
+{
+	public static Block oreFire, oreIce, oreLightning, oreAir, oreEarth, oreLight, oreDark, oreCopper, oreTin, oreSilver;
+	public static Block blockFire, blockIce, blockLightning, blockAir, blockEarth, blockSynthetic, blockEnergy, blockCopper, blockTin, blockBronze, blockSilver, blockSteel, blockDark, blockLight;
+	public static Block earthStone, flameBlock, electricBlock;
+	public static Block blockElement, blockEnchanting, blockSynthesizerIdle, blockSynthesizerBurning; 
+	public static Block flag;
+	public static Block tombstone;
+	
+	public static void init()
+	{
+		//Blocks
+		oreFire=(new BlockOreMaterial(POTEConfig.oreFireID).setHardness(3.0F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreFire"));
+		MinecraftForge.setBlockHarvestLevel(oreFire, "pickaxe", 2);
+		oreIce=(new BlockOreMaterial(POTEConfig.oreIceID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreIce"));
+		MinecraftForge.setBlockHarvestLevel(oreIce, "pickaxe", 2);
+		oreLightning=(new BlockOreMaterial(POTEConfig.oreLightningID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreLightning"));
+		MinecraftForge.setBlockHarvestLevel(oreLightning, "pickaxe", 2);
+		oreAir=(new BlockOreMaterial(POTEConfig.oreAirID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreAir"));
+		MinecraftForge.setBlockHarvestLevel(oreAir, "pickaxe", 2);
+		oreEarth=(new BlockOreMaterial(POTEConfig.oreEarthID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreEarth"));
+		MinecraftForge.setBlockHarvestLevel(oreEarth, "pickaxe", 2);
+		oreLight=(new BlockOreMaterial(POTEConfig.oreLightID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreLight"));
+		MinecraftForge.setBlockHarvestLevel(oreLight, "pickaxe", 2);
+		oreDark=(new BlockOreMaterial(POTEConfig.oreDarkID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreDark"));
+		MinecraftForge.setBlockHarvestLevel(oreDark, "pickaxe", 2);
+		oreCopper=(new BlockOreMaterial(POTEConfig.oreCopperID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreCopper"));
+		MinecraftForge.setBlockHarvestLevel(oreCopper, "pickaxe", 1);
+		oreTin=(new BlockOreMaterial(POTEConfig.oreTinID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreTin"));
+		MinecraftForge.setBlockHarvestLevel(oreTin, "pickaxe", 1);
+		oreSilver=(new BlockOreMaterial(POTEConfig.oreSilverID).setHardness(3F).setResistance(5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("oreSilver"));
+		MinecraftForge.setBlockHarvestLevel(oreSilver, "pickaxe", 2);
+		blockFire=(new BlockStorage(POTEConfig.blockFireID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockFire"));
+		MinecraftForge.setBlockHarvestLevel(blockFire, "pickaxe", 2);
+		blockIce=(new BlockStorage(POTEConfig.blockIceID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockIce"));
+		MinecraftForge.setBlockHarvestLevel(blockIce, "pickaxe", 2);
+		blockLightning=(new BlockStorage(POTEConfig.blockLightningID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockLightning"));
+		MinecraftForge.setBlockHarvestLevel(blockLightning, "pickaxe", 2);
+		blockAir=(new BlockStorage(POTEConfig.blockAirID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockAir"));
+		MinecraftForge.setBlockHarvestLevel(blockAir, "pickaxe", 2);
+		blockEarth=(new BlockStorage(POTEConfig.blockEarthID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockEarth"));
+		MinecraftForge.setBlockHarvestLevel(blockEarth, "pickaxe", 2);
+		blockLight=(new BlockStorage(POTEConfig.blockLightID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockLight"));
+		MinecraftForge.setBlockHarvestLevel(blockLight, "pickaxe", 2);
+		blockDark = new BlockStorage(POTEConfig.blockDarkID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockDark");
+		MinecraftForge.setBlockHarvestLevel(blockDark, "pickaxe", 2);
+		blockSynthetic=(new BlockStorage(POTEConfig.blockSyntheticID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockSynthetic"));
+		MinecraftForge.setBlockHarvestLevel(blockSynthetic, "pickaxe", 2);
+		blockEnergy=(new BlockStorage(POTEConfig.blockEnergyID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockEnergy"));
+		MinecraftForge.setBlockHarvestLevel(blockEnergy, "pickaxe", 2);
+		blockCopper=(new BlockStorage(POTEConfig.blockCopperID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockCopper"));
+		MinecraftForge.setBlockHarvestLevel(blockCopper, "pickaxe", 1);
+		blockTin=(new BlockStorage(POTEConfig.blockTinID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockTin"));
+		MinecraftForge.setBlockHarvestLevel(blockTin, "pickaxe", 1);
+		blockBronze=(new BlockStorage(POTEConfig.blockBronzeID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockBronze"));
+		MinecraftForge.setBlockHarvestLevel(blockBronze, "pickaxe", 1);
+		blockSilver=(new BlockStorage(POTEConfig.blockSilverID).setHardness(3F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockSilver"));
+		MinecraftForge.setBlockHarvestLevel(blockSilver, "pickaxe", 2);
+		blockSteel=(new BlockStorage(POTEConfig.blockSteelID).setHardness(3F).setResistance(20F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockSteel"));
+		MinecraftForge.setBlockHarvestLevel(blockSteel, "pickaxe", 2);
+		earthStone = new Block(POTEConfig.earthStoneID, Material.rock).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("earthStone").func_111022_d("pote:earthStone");
+		MinecraftForge.setBlockHarvestLevel(earthStone, "pickaxe", 1);
+		flameBlock = new BlockFlameBlock(POTEConfig.flameBlockID).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("flameBlock");
+		MinecraftForge.setBlockHarvestLevel(flameBlock, "pickaxe", 1);
+		electricBlock = new BlockElectricBlock(POTEConfig.electricBlockID).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("electricBlock");
+		MinecraftForge.setBlockHarvestLevel(electricBlock, "pickaxe", 1);
+		blockElement = new BlockElementBlock(POTEConfig.blockElementID).setHardness(5.0F).setStepSound(Block.soundAnvilFootstep).setResistance(2000.0F).setUnlocalizedName("blockElement");
+		blockEnchanting = new BlockEnchantingBlock(POTEConfig.blockEnchantingID).setHardness(5.0F).setStepSound(Block.soundAnvilFootstep).setResistance(2000.0F).setUnlocalizedName("blockEnchanting");
+		blockSynthesizerIdle = new BlockSynthesizer(POTEConfig.blockSynthesizerIdleID, false).setHardness(5.0F).setStepSound(Block.soundAnvilFootstep).setUnlocalizedName("blockSynthesizerIdle");
+		blockSynthesizerBurning = new BlockSynthesizer(POTEConfig.blockSynthesizerBurningID, true).setHardness(5.0F).setStepSound(Block.soundAnvilFootstep).setUnlocalizedName("blockSynthesizerBurning");
+		flag = new BlockFlag(POTEConfig.flagID).setHardness(0.8F).setStepSound(Block.soundClothFootstep).setUnlocalizedName("flag");
+	    tombstone = new BlockTombstone(POTEConfig.tombstoneID).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("tombstone");
+	    
+	    //Game Registry
+	    GameRegistry.registerBlock(oreFire, "oreFire");
+		GameRegistry.registerBlock(oreIce, "oreIce");
+		GameRegistry.registerBlock(oreLightning, "oreLightning");
+		GameRegistry.registerBlock(oreAir, "oreAir");
+		GameRegistry.registerBlock(oreEarth, "oreEarth");
+		GameRegistry.registerBlock(oreLight, "oreLight");
+		GameRegistry.registerBlock(oreDark, "oreDark");
+		GameRegistry.registerBlock(oreCopper, "oreCopper");
+		GameRegistry.registerBlock(oreTin, "oreTin");
+		GameRegistry.registerBlock(oreSilver, "oreSilver");
+		GameRegistry.registerBlock(blockFire, "blockFire");
+		GameRegistry.registerBlock(blockIce, "blockIce");
+		GameRegistry.registerBlock(blockLightning, "blockLightning");
+		GameRegistry.registerBlock(blockEarth, "blockEarth");
+		GameRegistry.registerBlock(blockAir, "blockAir");
+		GameRegistry.registerBlock(blockTin, "blockTin");
+		GameRegistry.registerBlock(blockCopper, "blockCopper");
+		GameRegistry.registerBlock(blockBronze, "blockBronze");
+		GameRegistry.registerBlock(blockSilver, "blockSilver");
+		GameRegistry.registerBlock(blockSteel, "blockSteel");
+		GameRegistry.registerBlock(earthStone, "earthStone");
+		GameRegistry.registerBlock(blockElement, "blockElement");
+		GameRegistry.registerBlock(blockEnchanting, "blockEnchanting");
+		GameRegistry.registerBlock(blockSynthesizerIdle, "blockAccelerator");
+		GameRegistry.registerBlock(blockLight, "blockLight");
+		GameRegistry.registerBlock(blockDark, "blockDark");
+		GameRegistry.registerBlock(blockSynthetic, "blockSynthetic");
+		GameRegistry.registerBlock(blockEnergy, "blockEnergy");
+		GameRegistry.registerBlock(flameBlock, "flameBlock");
+		GameRegistry.registerBlock(electricBlock, "electricBlock");
+		GameRegistry.registerBlock(flag, ItemFlag.class, mod_POTE.modid + (POTEBlocks.flag.getUnlocalizedName().substring(5)));
+		GameRegistry.registerBlock(tombstone, "tombstone");
+		
+		//Registers Tile Entities
+		GameRegistry.registerTileEntity(TileEntityAccelerator.class, "tileentityAccelerator");
+		GameRegistry.registerTileEntity(TileEntityTombstone.class, "tombstoneTE");
+		
+		//Language Registry 
+		LanguageRegistry.addName(oreIce, "\2473Ice Crystal Ore");
+		LanguageRegistry.addName(oreLightning, "\2471Lightning Crystal Ore");
+	 	LanguageRegistry.addName(oreFire, "\2476Fire Crystal Ore");
+		LanguageRegistry.addName(oreAir, "\2477Air Crystal Ore");
+		LanguageRegistry.addName(oreCopper, "Copper Ore");
+		LanguageRegistry.addName(oreTin, "Tin Ore");
+		LanguageRegistry.addName(blockFire, "\2476Block of Fire Crystals");
+		LanguageRegistry.addName(blockIce, "\2473Block of Ice Crystals");
+		LanguageRegistry.addName(blockLightning, "\2471Block of Lightning Crystals");
+		LanguageRegistry.addName(blockEarth, "Block of Earth Crystals");
+		LanguageRegistry.addName(blockAir, "\2477Block of Air Crystals");
+		LanguageRegistry.addName(blockSynthetic, "Block of Synthetic Energy Crystals");
+		LanguageRegistry.addName(blockEnergy, "Block of Energy Crystals");
+		LanguageRegistry.addName(blockTin, "Block of Tin");
+		LanguageRegistry.addName(blockCopper, "Block of Copper");
+		LanguageRegistry.addName(blockBronze, "Block of Bronze");
+		LanguageRegistry.addName(oreSilver, "Silver Ore");
+		LanguageRegistry.addName(oreLight, "\2473Light Energy Crystal Ore");
+		LanguageRegistry.addName(oreDark, "\247cDark Energy Crystal Ore");
+		LanguageRegistry.addName(blockSilver, "Block of Silver");
+		LanguageRegistry.addName(blockSteel, "Block of Steel");
+		LanguageRegistry.addName(earthStone, "Earth Stone");
+		LanguageRegistry.addName(blockElement, "Element Crafting Table");
+		LanguageRegistry.addName(blockEnchanting, "Light and Dark Enchanting Table");
+		LanguageRegistry.addName(blockSynthesizerIdle, "Crystal Synthesizer");
+		LanguageRegistry.addName(blockLight, "\2479Block of Light Crystals");
+		LanguageRegistry.addName(blockDark, "\247cBlock of Dark Crystals");
+		LanguageRegistry.addName(electricBlock, "\2471Electric Block");
+		LanguageRegistry.addName(flameBlock, "\2476Fire Stone");
+		LanguageRegistry.addName(new ItemStack(flag, 1, 0), "Fire Titan Flag");	
+		LanguageRegistry.addName(tombstone, "Tombstone");
+	}
+}
